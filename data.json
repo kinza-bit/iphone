@@ -1,0 +1,69 @@
+[
+  {
+    "id": "iphone-16",
+    "name": "iPhone 16",
+    "price": 799,
+    "highlight": "The future is in your hand.",
+    "description": "Powered by the all-new A18 Bionic chip, reengineered camera system, and an all-day battery that keeps up with your ambitions.",
+    "image": "iPhone_16_Pink_PDP_Image_Position_1__en-WW.webp",
+    "colors": [
+      { "name": "Pink", "hex": "#f8bbd0" },
+      { "name": "Black", "hex": "#212121" },
+      { "name": "White", "hex": "#ffffff" },
+      { "name": "Ultramarine", "hex": "#000080" },
+      { "name": "Teal", "hex": "#008080" }
+    ],
+    "storage": ["128GB", "256GB", "512GB"],
+    "specs": {
+      "display": "6.1″ Super Retina XDR",
+      "chip": "A18 Bionic",
+      "camera": "48MP Main + 12MP Ultra Wide",
+      "battery": "Up to 22 hours video playback"
+    },
+    "features": ["Action Button", "Dynamic Island", "Apple Intelligence", "Ceramic Shield", "Aerospace-grade aluminium"]
+  },
+  {
+    "id": "iphone-16-pro",
+    "name": "iPhone 16 Pro",
+    "price": 999,
+    "highlight": "Hello, Apple Intelligence.",
+    "description": "A total pro. The A18 Pro chip makes Pro possible. Incredible power efficiency. Pro motion display.",
+    "image": "iPhone-16-Pro-Desert-Titanium-1.webp",
+    "colors": [
+      { "name": "Desert Titanium", "hex": "#c5b358" },
+      { "name": "Natural Titanium", "hex": "#d3d3d3" },
+      { "name": "White Titanium", "hex": "#f5f5f5" },
+      { "name": "Black Titanium", "hex": "#2e2e2e" }
+    ],
+    "storage": ["128GB", "256GB", "512GB", "1TB"],
+    "specs": {
+      "display": "6.3″ Super Retina XDR",
+      "chip": "A18 Pro",
+      "camera": "48MP Main + 48MP Ultra Wide + 12MP Telephoto",
+      "battery": "Up to 27 hours video playback"
+    },
+    "features": ["ProMotion (120Hz)", "Always-On display", "Action Button", "Camera Control", "Grade 5 titanium design"]
+  },
+  {
+    "id": "iphone-16-pro-max",
+    "name": "iPhone 16 Pro Max",
+    "price": 1199,
+    "highlight": "The ultimate iPhone.",
+    "description": "The largest display ever on an iPhone. The best battery life ever. The most advanced camera system.",
+    "image": "Apple-iPhone-16-Pro-Max-Qmart-4-removebg-preview.png",
+    "colors": [
+      { "name": "Desert Titanium", "hex": "#c5b358" },
+      { "name": "Natural Titanium", "hex": "#d3d3d3" },
+      { "name": "White Titanium", "hex": "#f5f5f5" },
+      { "name": "Black Titanium", "hex": "#2e2e2e" }
+    ],
+    "storage": ["256GB", "512GB", "1TB"],
+    "specs": {
+      "display": "6.9″ Super Retina XDR",
+      "chip": "A18 Pro",
+      "camera": "48MP Main + 48MP Ultra Wide + 12MP Telephoto",
+      "battery": "Up to 33 hours video playback"
+    },
+    "features": ["Largest display ever", "Longest battery life", "Pro camera system", "A18 Pro chip", "Camera Control"]
+  }
+]

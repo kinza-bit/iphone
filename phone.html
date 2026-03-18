@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iPhone 16 — Think Different. Again.</title>
+    <meta name="description"
+        content="Discover the all-new iPhone 16. Breakthrough performance, stunning camera system, and unmatched battery life. Order yours today." />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'media',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+                    colors: {
+                        brand: { DEFAULT: '#6e44ff', light: '#a855f7', pink: '#ec4899' }
+                    },
+                    backgroundImage: {
+                        'brand-gradient': 'linear-gradient(135deg, #6e44ff, #a855f7, #ec4899)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <style>
+        .grad-text {
+            background: linear-gradient(135deg, #6e44ff, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .grad-btn {
+            background: linear-gradient(135deg, #6e44ff, #a855f7, #ec4899);
+        }
+
+        .grad-bg {
+            background: linear-gradient(135deg, #6e44ff22, #a855f733);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-14px);
+            }
+        }
+
+        .float-anim {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(1.4);
+            }
+        }
+
+        .pulse-dot {
+            animation: pulse-dot 1.8s ease-in-out infinite;
+        }
+
+        /* Hamburger Animation */
+        .hamburger-line {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            transform-origin: center;
+        }
+
+        .menu-open .line-1 {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-open .line-2 {
+            opacity: 0;
+        }
+
+        .menu-open .line-3 {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 overflow-x-hidden">
+
+    <!-- ════════════════════════════════════════
+         HEADER / NAV
+    ════════════════════════════════════════ -->
+    <header
+        class="sticky top-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+            <!-- Mobile Menu Toggle -->
+            <button id="menuToggle" class="md:hidden p-2 text-gray-600 dark:text-gray-400 hover:text-brand transition-colors"
+                aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="hamburger-line line-1" x="3" y="4" width="18" height="2" rx="1" fill="currentColor" />
+                    <rect class="hamburger-line line-2" x="3" y="11" width="18" height="2" rx="1" fill="currentColor" />
+                    <rect class="hamburger-line line-3" x="3" y="18" width="18" height="2" rx="1" fill="currentColor" />
+                </svg>
+            </button>
+
+            <!-- Logo -->
+            <a href="#hero" class="text-xl font-black tracking-tight grad-text" aria-label="iPhone 16 home">
+                📱 iPhone 16
+            </a>
+
+            <!-- Nav links -->
+            <nav aria-label="Main navigation" class="hidden md:flex items-center gap-8">
+                <a href="#features"
+                    class="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-brand dark:hover:text-brand-light transition-colors">Features</a>
+                <a href="#specs"
+                    class="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-brand dark:hover:text-brand-light transition-colors">Specs</a>
+                <a href="#pricing"
+                    class="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-brand dark:hover:text-brand-light transition-colors">Pricing</a>
+                <a href="#order"
+                    class="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-brand dark:hover:text-brand-light transition-colors">Order</a>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="flex items-center gap-4">
+                <button id="cartBtn"
+                    class="relative p-2 text-gray-600 dark:text-gray-400 hover:text-brand transition-colors"
+                    aria-label="Open cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span id="cartCount"
+                        class="absolute top-0 right-0 inline-flex items-center justify-center px-1.5 py-0.5 text-[10px] font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 grad-btn rounded-full hidden">0</span>
+                </button>
+                <a href="#order"
+                    class="grad-btn text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200">
+                    Buy Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ════════════════════════════════════════
+             HERO
+        ════════════════════════════════════════ -->
+        <section id="hero"
+            class="relative min-h-screen flex items-center justify-center px-6 py-24 overflow-hidden bg-gradient-to-br from-white via-purple-50 to-pink-50 dark:from-gray-950 dark:via-purple-950/30 dark:to-gray-950">
+
+            <!-- Glow blob -->
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div class="w-[600px] h-[600px] rounded-full bg-purple-400/10 dark:bg-purple-600/15 blur-3xl">
+                </div>
+            </div>
+
+            <div class="relative max-w-7xl w-full mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
+
+                <!-- Text content -->
+                <div class="flex-1 text-center lg:text-left">
+                    <!-- Badge -->
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-400/40 bg-purple-500/10 text-purple-600 dark:text-purple-300 text-xs font-bold uppercase tracking-widest mb-6">
+                        <span class="w-2 h-2 rounded-full bg-purple-500 pulse-dot"></span>
+                        New — 2024 Collection
+                    </div>
+
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-6">
+                        The Future Is<br />
+                        <span class="grad-text">In Your Hand.</span>
+                    </h1>
+
+                    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-lg mx-auto lg:mx-0 mb-6">
+                        <strong class="text-gray-900 dark:text-white">iPhone 16</strong> — Powered by the
+                        all-new A18 Bionic chip, reengineered camera system, and an all-day battery that
+                        keeps up with your ambitions.
+                    </p>
+
+                    <blockquote
+                        class="border-l-4 border-purple-500 pl-4 italic text-gray-500 dark:text-gray-400 text-sm mb-8 text-left">
+                        "The most powerful iPhone ever made — built for how you live, work, and create."
+                    </blockquote>
+
+                    <!-- Price line -->
+                    <div class="flex items-baseline gap-3 justify-center lg:justify-start mb-8">
+                        <span class="text-4xl font-extrabold grad-text">$799</span>
+                        <span class="text-gray-500 dark:text-gray-400 text-sm">starting price · free delivery</span>
+                    </div>
+
+                    <!-- Action buttons -->
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <a href="#pricing"
+                            class="grad-btn text-white font-bold px-8 py-4 rounded-full shadow-xl hover:opacity-90 hover:-translate-y-1 hover:shadow-purple-500/30 transition-all duration-200">
+                            Order Now →
+                        </a>
+                        <a href="#features"
+                            class="px-8 py-4 rounded-full border-2 border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-semibold hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-200">
+                            Explore Features
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product image -->
+                <figure class="flex-1 flex flex-col items-center">
+                    <div class="relative">
+                        <div
+                            class="absolute inset-0 rounded-full bg-gradient-to-br from-purple-400/30 to-pink-400/20 blur-2xl scale-110">
+                        </div>
+                        <img src="iPhone_16_Pink_PDP_Image_Position_1__en-WW.webp"
+                            alt="iPhone 16 in Pink — front view showing the stunning display"
+                            class="relative z-10 max-h-[520px] w-auto object-contain drop-shadow-2xl float-anim" />
+                    </div>
+                    <figcaption class="mt-4 text-sm text-gray-500 dark:text-gray-400 text-center">
+                        <strong class="text-gray-800 dark:text-gray-200">iPhone 16</strong> · Pink ·
+                        6.1-inch Super Retina XDR
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════
+             STATS / AT A GLANCE
+        ════════════════════════════════════════ -->
+        <section id="stats" class="bg-gray-50 dark:bg-gray-900 border-y border-gray-200 dark:border-gray-800 py-12 px-6"
+            aria-label="Key highlights">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-center text-2xl font-bold mb-8 dark:text-white">
+                    ⚡ <span class="grad-text">iPhone 16</span> at a Glance
+                </h2>
+                <div class="overflow-x-auto rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm">
+                    <table class="w-full text-sm text-left">
+                        <thead>
+                            <tr class="grad-btn text-white">
+                                <th class="px-6 py-4 font-semibold">Chip</th>
+                                <th class="px-6 py-4 font-semibold">Camera</th>
+                                <th class="px-6 py-4 font-semibold">Battery Life</th>
+                                <th class="px-6 py-4 font-semibold">Connectivity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+                                <td class="px-6 py-5 font-bold text-purple-600 dark:text-purple-400">A18 Bionic</td>
+                                <td class="px-6 py-5 text-gray-700 dark:text-gray-300"><strong>48 MP</strong> Triple
+                                    Camera</td>
+                                <td class="px-6 py-5 text-gray-700 dark:text-gray-300"><strong>27 hours</strong> video
+                                    playback</td>
+                                <td class="px-6 py-5 text-gray-700 dark:text-gray-300"><strong>5G</strong> Ultra-Fast
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════
+             SEARCH & PRODUCT LISTING
+        ════════════════════════════════════════ -->
+        <section id="features" class="py-24 px-6">
+            <div class="max-w-6xl mx-auto">
+                <!-- Section header -->
+                <div class="text-center mb-16">
+                    <span
+                        class="inline-block text-xs font-bold tracking-[3px] uppercase text-purple-500 dark:text-purple-400 mb-3">
+                        Explore the Collection
+                    </span>
+                    <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight dark:text-white mb-4">
+                        Pick Your Perfect iPhone 16
+                    </h2>
+
+                    <!-- Search and Filter Bar -->
+                    <div class="mt-8 flex flex-col md:flex-row items-center justify-center gap-4 max-w-2xl mx-auto">
+                        <div class="relative w-full">
+                            <input type="text" id="searchInput" placeholder="Search models..."
+                                class="w-full pl-10 pr-4 py-3 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
+                            <svg class="absolute left-3 top-3.5 w-5 h-5 text-gray-400" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <select id="priceFilter"
+                            class="w-full md:w-48 px-4 py-3 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
+                            <option value="all">All Prices</option>
+                            <option value="under-1000">Under $1000</option>
+                            <option value="over-1000">Over $1000</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Product cards grid (Dynamic) -->
+                <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Products will be loaded here via JS -->
+                    <div class="col-span-full text-center py-20">
+                        <div
+                            class="animate-spin inline-block w-8 h-8 border-4 border-purple-500 border-t-transparent rounded-full mb-4">
+                        </div>
+                        <p class="text-gray-500">Loading models...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════
+             TECHNICAL SPECIFICATIONS
+        ════════════════════════════════════════ -->
+        <section id="specs" class="bg-gray-50 dark:bg-gray-900 border-y border-gray-200 dark:border-gray-800 py-24 px-6"
+            aria-label="Technical specifications">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-14">
+                    <span
+                        class="inline-block text-xs font-bold tracking-[3px] uppercase text-purple-500 dark:text-purple-400 mb-3">
+                        Technical Specifications
+                    </span>
+                    <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight dark:text-white">
+                        Everything You Need.<br />Nothing You Don't.
+                    </h2>
+                </div>
+
+                <div class="flex flex-col lg:flex-row gap-14 items-center">
+                    <!-- Image -->
+                    <figure class="flex-shrink-0 text-center">
+                        <img src="iPhone_16_Pink_PDP_Image_Position_1__en-WW.webp"
+                            alt="iPhone 16 Pink side profile showing the slim design"
+                            class="max-h-80 w-auto object-contain drop-shadow-xl mx-auto hover:scale-105 transition-transform duration-300" />
+                        <figcaption class="mt-3 text-xs text-gray-400 dark:text-gray-500">
+                            iPhone 16 · Aluminium &amp; glass · IP68 rated
+                        </figcaption>
+                    </figure>
+
+                    <!-- Specs table -->
+                    <div
+                        class="flex-1 overflow-x-auto rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm w-full">
+                        <table class="w-full text-sm">
+                            <caption class="sr-only">Full iPhone 16 Specification Sheet</caption>
+                            <thead>
+                                <tr class="grad-btn text-white">
+                                    <th class="px-5 py-3 text-left font-semibold w-36">Specification</th>
+                                    <th class="px-5 py-3 text-left font-semibold">Details</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+                                <tr
+                                    class="bg-white dark:bg-gray-800 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
+                                    <td class="px-5 py-3 font-semibold text-gray-700 dark:text-gray-300">Display</td>
+                                    <td class="px-5 py-3 text-gray-600 dark:text-gray-400">6.1″ Super Retina XDR · 2556
+                                        × 1179 px · 460 ppi · ProMotion 120Hz · Always-On</td>
+                                </tr>
+                                <tr
+                                    class="bg-white dark:bg-gray-800 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
+                                    <td class="px-5 py-3 font-semibold text-gray-700 dark:text-gray-300">Chip</td>
+                                    <td class="px-5 py-3 text-gray-600 dark:text-gray-400">Apple A18 Bionic — 6-core CPU
+                                        · 6-core GPU · 16-core Neural Engine</td>
+                                </tr>
+                                <tr
+                                    class="bg-white dark:bg-gray-800 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
+                                    <td class="px-5 py-3 font-semibold text-gray-700 dark:text-gray-300">Main Camera
+                                    </td>
+                                    <td class="px-5 py-3 text-gray-600 dark:text-gray-400">48MP Fusion · ƒ/1.6 · 2×
+                                        optical zoom · Photonic Engine</td>
+                                </tr>
+                                <tr
+                                    class="bg-white dark:bg-gray-800 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
+                                    <td class="px-5 py-3 font-semibold text-gray-700 dark:text-gray-300">Ultra Wide</td>
+                                    <td class="px-5 py-3 text-gray-600 dark:text-gray-400">12MP · ƒ/2.2 · 120° field of
+                                        view · Macro photography</td>
+                                </tr>
+                                <tr
+                                    class="bg-white dark:bg-gray-800 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
+                                    <td class="px-5 py-3 font-semibold text-gray-700 dark:text-gray-300">Telephoto</td>
+                                    <td class="px-5 py-3 text-gray-600 dark:text-gray-400">12MP · ƒ/2.8 · 5× optical
+                                        zoom · up to 25× digital zoom</td>
+                                </tr>
+                                <tr
+                                    class="bg-white dark:bg-gray-800 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
+                                    <td class="px-5 py-3 font-semibold text-gray-700 dark:text-gray-300">Front Camera
+                                    </td>
+                                    <td class="px-5 py-3 text-gray-600 dark:text-gray-400">12MP TrueDepth · ƒ/1.9 · Face
+                                        ID · 4K video at 60 fps</td>
+                                </tr>
+                                <tr
+                                    class="bg-white dark:bg-gray-800 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
+                                    <td class="px-5 py-3 font-semibold text-gray-700 dark:text-gray-300">Battery</td>
+                                    <td class="px-5 py-3 text-gray-600 dark:text-gray-400">Up to 27 hrs video · MagSafe
+                                        &amp; USB&#8209;C · 50% in 30 min</td>
+                                </tr>
+                                <tr
+                                    class="bg-white dark:bg-gray-800 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
+                                    <td class="px-5 py-3 font-semibold text-gray-700 dark:text-gray-300">Connectivity
+                                    </td>
+                                    <td class="px-5 py-3 text-gray-600 dark:text-gray-400">5G · Wi-Fi 6E · Bluetooth 5.3
+                                        · NFC · Ultra Wideband · Satellite SOS</td>
+                                </tr>
+                                <tr
+                                    class="bg-white dark:bg-gray-800 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
+                                    <td class="px-5 py-3 font-semibold text-gray-700 dark:text-gray-300">Storage</td>
+                                    <td class="px-5 py-3 text-gray-600 dark:text-gray-400">128 GB · 256 GB · 512 GB</td>
+                                </tr>
+                                <tr
+                                    class="bg-white dark:bg-gray-800 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
+                                    <td class="px-5 py-3 font-semibold text-gray-700 dark:text-gray-300">Colors</td>
+                                    <td class="px-5 py-3 text-gray-600 dark:text-gray-400">Pink · Black Titanium · White
+                                        · Ultramarine Blue · Teal</td>
+                                </tr>
+                                <tr
+                                    class="bg-white dark:bg-gray-800 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
+                                    <td class="px-5 py-3 font-semibold text-gray-700 dark:text-gray-300">Durability</td>
+                                    <td class="px-5 py-3 text-gray-600 dark:text-gray-400">IP68 · 6 m depth 30 min ·
+                                        Ceramic Shield front · Aluminium frame</td>
+                                </tr>
+                                <tr
+                                    class="bg-white dark:bg-gray-800 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
+                                    <td class="px-5 py-3 font-semibold text-gray-700 dark:text-gray-300">OS</td>
+                                    <td class="px-5 py-3 text-gray-600 dark:text-gray-400">iOS 18 · Apple Intelligence
+                                        built-in</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobileMenu" class="fixed inset-0 z-40 md:hidden bg-white dark:bg-gray-950 translate-x-full transition-transform duration-500 ease-in-out pt-24 px-6">
+        <nav class="flex flex-col gap-6">
+            <a href="#features" class="mobile-nav-link text-2xl font-bold dark:text-white" onclick="toggleMenu()">Shop</a>
+            <a href="#specs" class="mobile-nav-link text-2xl font-bold dark:text-white" onclick="toggleMenu()">Specs</a>
+            <a href="#order" class="mobile-nav-link text-2xl font-bold dark:text-white" onclick="toggleMenu()">Order</a>
+            <div class="pt-6 border-t border-gray-100 dark:border-gray-800">
+                <button onclick="toggleDarkMode(); toggleMenu();" class="flex items-center gap-3 text-lg font-medium text-gray-600 dark:text-gray-400">
+                    <span id="mobileThemeIcon">🌙</span> Toggle Theme
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Cart Drawer Overlay -->
+    <div id="cartOverlay"
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] opacity-0 pointer-events-none transition-opacity duration-300">
+    </div>
+
+    <!-- Cart Drawer -->
+    <div id="cartDrawer"
+        class="fixed top-0 right-0 h-full w-full max-w-md bg-white dark:bg-gray-950 z-[70] translate-x-full transition-transform duration-500 ease-in-out shadow-2xl border-l border-gray-200 dark:border-gray-800">
+        <div class="flex flex-col h-full">
+            <div class="p-6 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between">
+                <h2 class="text-xl font-bold dark:text-white">Your Cart</h2>
+                <button id="closeCart"
+                    class="p-2 hover:bg-gray-100 dark:hover:bg-gray-900 rounded-full transition-colors">
+                    <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <div id="cartItems" class="flex-1 overflow-y-auto p-6 space-y-6">
+                <!-- Cart items dynamic -->
+                <p class="text-center text-gray-500 mt-10">Your cart is empty.</p>
+            </div>
+            <div class="p-6 border-t border-gray-200 dark:border-gray-800 space-y-4">
+                <div class="flex items-center justify-between text-lg font-bold dark:text-white">
+                    <span>Total</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+                <button id="checkoutBtn"
+                    class="w-full grad-btn text-white font-bold py-4 rounded-xl shadow-lg hover:opacity-90 transition-all disabled:opacity-50"
+                    disabled>
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div id="productModal"
+        class="fixed inset-0 z-[80] flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-md" onclick="closeProductModal()"></div>
+        <div
+            class="relative w-full max-w-4xl bg-white dark:bg-gray-900 rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
+            <button onclick="closeProductModal()"
+                class="absolute top-4 right-4 z-10 p-2 bg-white/10 hover:bg-white/20 dark:bg-black/10 dark:hover:bg-black/20 rounded-full text-gray-500 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+            <div id="productModalContent" class="grid grid-cols-1 lg:grid-cols-2">
+                <!-- Content will be injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal"
+        class="fixed inset-0 z-[90] flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-md" onclick="closeCheckoutModal()"></div>
+        <div
+            class="relative w-full max-w-lg bg-white dark:bg-gray-900 rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
+            <div class="p-8">
+                <h2 class="text-2xl font-bold mb-6 dark:text-white text-center">Complete Your Order</h2>
+                <div id="orderSummary"
+                    class="mb-8 p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700">
+                    <!-- Order summary will be injected -->
+                </div>
+                <form id="checkoutForm" onsubmit="handleCheckout(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Full
+                            Name</label>
+                        <input type="text" name="name" required
+                            class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-purple-500 outline-none">
+                    </div>
+                    <div>
+                        <label
+                            class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Email</label>
+                        <input type="email" name="email" required
+                            class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-purple-500 outline-none">
+                    </div>
+                    <div>
+                        <label
+                            class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Address</label>
+                        <textarea name="address" required rows="2"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-purple-500 outline-none"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Payment
+                            Method</label>
+                        <select name="payment"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-purple-500 outline-none">
+                            <option value="card">Credit Card</option>
+                            <option value="apple">Apple Pay</option>
+                            <option value="crypto">Cryptocurrency</option>
+                        </select>
+                    </div>
+                    <button type="submit"
+                        class="w-full grad-btn text-white font-bold py-4 rounded-xl shadow-lg hover:opacity-90 transition-all mt-4">
+                        Confirm Purchase
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="fixed bottom-6 right-6 z-[100] flex flex-col gap-3 pointer-events-none"></div>
+
+    <!-- ════════════════════════════════════════
+         FOOTER
+    ════════════════════════════════════════ -->
+    <footer class="bg-gray-950 text-gray-400 py-12 px-6 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto flex flex-col items-center gap-6">
+            <p class="text-2xl font-black grad-text">📱 iPhone 16</p>
+
+            <nav aria-label="Footer navigation" class="flex flex-wrap justify-center gap-6 text-sm">
+                <a href="#features" class="hover:text-white hover:underline transition-colors">Shop</a>
+                <a href="#specs" class="hover:text-white hover:underline transition-colors">Specs</a>
+                <a href="#" class="hover:text-white hover:underline transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white hover:underline transition-colors">Terms of Use</a>
+            </nav>
+
+            <p class="text-xs text-gray-600 text-center">
+                © 2024 Apple Inc. All rights reserved. iPhone is a trademark of Apple Inc.,
+                registered in the U.S. and other countries.
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
